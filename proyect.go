@@ -8,6 +8,19 @@ import (
 	"strings"
 )
 
+func main() {
+	dataBin, err := ioutil.ReadFile("words.txt")
+	if err != nil {
+		fmt.Print(err)
+	}
+	textFile := string(dataBin)
+	wc := getWordsCountMapOfFile(textFile)
+	w := getStringSortWordsOfWordsCountMap(wc)
+	for _, word := range w {
+		fmt.Println(word, wc[word])
+	}
+}
+
 // getWordsCountMapOfFile : here
 func getWordsCountMapOfFile(textFile string) map[string]int {
 	lowerText := strings.ToLower(textFile)
@@ -34,17 +47,4 @@ func getStringSortWordsOfWordsCountMap(wordsCountMap map[string]int) []string {
 	}
 	sort.Strings(words)
 	return words
-}
-
-func main() {
-	dataBin, err := ioutil.ReadFile("words.txt")
-	if err != nil {
-		fmt.Print(err)
-	}
-	textFile := string(dataBin)
-	wc := getWordsCountMapOfFile(textFile)
-	w := getStringSortWordsOfWordsCountMap(wc)
-	for _, word := range w {
-		fmt.Println(word, wc[word])
-	}
 }
