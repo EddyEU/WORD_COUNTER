@@ -8,9 +8,9 @@ import (
 	"strings"
 )
 
-// WordsCount : describe what this function does
-func WordsCount(text string) map[string]int {
-	lowerText := strings.ToLower(text)
+// getWordsCountMapOfFile : here
+func getWordsCountMapOfFile(textFile string) map[string]int {
+	lowerText := strings.ToLower(textFile)
 
 	reg, err := regexp.Compile("[^a-zA-Z]+")
 	if err != nil {
@@ -26,8 +26,8 @@ func WordsCount(text string) map[string]int {
 	return wordsCountMap
 }
 
-// SortWords : here you tell us what SortWords is
-func SortWords(wordsCountMap map[string]int) []string {
+// getStringSortWordsOfWordsCountMap : here
+func getStringSortWordsOfWordsCountMap(wordsCountMap map[string]int) []string {
 	var words []string
 	for word := range wordsCountMap {
 		words = append(words, word)
@@ -42,8 +42,8 @@ func main() {
 		fmt.Print(err)
 	}
 	textFile := string(dataBin)
-	wc := WordsCount(textFile)
-	w := SortWords(wc)
+	wc := getWordsCountMapOfFile(textFile)
+	w := getStringSortWordsOfWordsCountMap(wc)
 	for _, word := range w {
 		fmt.Println(word, wc[word])
 	}
