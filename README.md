@@ -1,10 +1,16 @@
 # WORD_COUNTER
 /**
 MIS - Maestria en Ingenieria de Software
+
 author: Ing. Eddy Escalante Ustariz
+
 respository: https://github.com/EddyEU/WORD_COUNTER
+
 date: 19/11/2018
+
  **/
+ 
+ 
 /*********************************************************************************************/
 /**************************************    PROBLEM    ****************************************/
 /*********************************************************************************************/
@@ -16,6 +22,7 @@ We will provide you a file with some text on it, and you have to open it and fin
 -> All words must be processed in lower case (ignore case)
 -> Output must be sorted by word alphabetically
 -> Output must have one entry per word, having its frequency next to it
+
 
 /*********************************************************************************************/
 /*************************************    Download GO   **************************************/
